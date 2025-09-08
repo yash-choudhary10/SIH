@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jharkhand Citizen Complaint Portal</title>
+    <link rel="stylesheet" href="citizen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Main box -->
+    <div class="mainbox">
+        <h2 class="custom-heading">REPORT ISSUE</h2>
+        <form id="complaintForm">
+            <input type="hidden" id="user_id" value="1">
+
+
+
+            <!-- Camera -->
+            <input type="file" id="fileInput" multiple capture style="display:none;">
+
+            <label for="fileInput" class="camera-btn">
+                <i class="fa-solid fa-camera"></i>
+                <span class="camera-text">Upload Photos/Videos</span>
+            </label>
+
+
+                
+        
+            <!-- Issue category -->
+        <div class="issue-cat">
+            <label for="category">Issue Category</label>
+            <select id="category" required>
+                <option value="" disabled selected hidden>Select issue type</option>
+                <option>Water Supply</option>
+                <option>Electricity</option>
+                <option>Road Damage</option>
+                <option>Garbage</option>
+            </select>
+        </div>
+
+
+
+                <!-- Description -->
+            <div class="description-container">
+                <div class="textarea">
+                    <textarea id="description" placeholder="Describe the issue in detail" required></textarea>
+                    <button type="button" id="micBtn"><i class="fa-solid fa-microphone"></i></button>
+                    <label for="description">Description</label>
+                </div>
+            </div>
+
+
+
+
+                
+                <!-- Voice recorder -->
+                <div class="voice-recorder">
+                    <label>Voice Recording (Optional)</label>
+                    <button type="button" id="recordBtn"><i class="fa-solid fa-microphone"></i></button>
+                    <p id="recordStatus"></p>
+                    <audio id="audioPlayback" controls></audio>
+                    <input type="hidden" id="audioData" name="audioData">
+                    <p id="status"></p>
+                </div>
+
+
+
+                <!-- Location -->
+                <label>Location</label>
+                <div class="textarea">
+                    <textarea id="location" placeholder="Enter you location"></textarea>
+                    <button onclick="getCurrentLocation()"><i class="fa-solid fa-location-dot"></i></button>
+                </div>
+
+
+
+                <!-- Name -->
+                <div class="name">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter full name" required>
+                </div>
+
+
+
+
+                <!-- Phone Number -->
+                <div class="phone">
+                    <label for="phone">Phone Number</label>
+                    <input type="number" id="phone" placeholder="Enter your contact number" required>
+                </div>
+
+
+
+                <button type="submit">SUBMIT</button>
+
+
+        </form>
+
+
+    </div>
+    <script src="citizen.js"></script>
+
+</body>
+
+</html>

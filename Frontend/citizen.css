@@ -1,0 +1,251 @@
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+
+
+/* Main box */
+.mainbox {
+    background: linear-gradient(to bottom, rgb(255, 204, 77), rgb(88, 206, 246));
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    margin: auto;
+    box-sizing: border-box;
+    /* includes padding in width/height */
+}
+
+
+
+/* Main heading */
+.custom-heading {
+    color: rgb(36, 44, 128);
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+
+/* Camera button */
+.camera-btn {
+    background: rgb(233, 251, 255);
+    text-align: center;
+    font-size: 50px;
+    color: black;
+    padding: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    /* stack icon and text vertically */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    border-radius: 10px;
+    /* optional: rounded box */
+}
+
+.camera-btn:hover {
+    background: rgb(200, 236, 250);
+    /* darker blue for hover */
+    transform: scale(1.05);
+    /* slight zoom on hover */
+}
+
+.camera-text {
+    font-size: 16px;
+    margin-top: 10px;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+
+input,
+select,
+textarea,
+button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+}
+
+
+
+/* Issue category */
+.issue-cat label {
+    font-weight: bold;
+}
+
+.issue-cat {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    /* spacing below each field */
+}
+
+
+
+/* Description */
+.description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.description-container label {
+    font-weight: bold;
+}
+
+.description-container .textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.description-container textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.description-container button {
+        padding: 10px 15px;
+            cursor: pointer;
+            color: black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+
+
+
+
+/* Recording button */
+.voice-recorder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.voice-recorder label {
+    font-weight: bold;
+}
+
+.voice-recorder button {
+    color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: black;
+}
+
+.voice-recorder p {
+    margin: 0;
+}
+
+.voice-recorder audio {
+    width: 100%;
+}
+
+
+
+/* Name */
+.name {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.name label {
+    font-weight: bold;
+}
+
+.name input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+
+/* Phone number */
+.phone {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.phone label {
+    font-weight: bold;
+}
+
+.phone input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+
+/* Submit button */
+button[type="submit"] {
+    background: #2c7be5;
+    /* primary blue */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    /* more balanced padding */
+    margin-top: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    /* makes it full width */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+button[type="submit"]:hover {
+    background: #1a68d1;
+    /* darker blue on hover */
+    transform: scale(1.03);
+}
+
+/* Active (pressed) effect */
+button[type="submit"]:active {
+    background: #155ab3;
+    /* even darker blue */
+    transform: scale(0.98);
+}

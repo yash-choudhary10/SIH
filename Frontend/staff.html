@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="staff.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <h1 id="dashboard">Dashboard</h1>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="card">
+
+            <h2 for>Filter</h2>
+
+            <label for="statusFilter">Status</label>
+            <select id="statusFilter">
+                <option value="all">All</option>
+                <option value="open">Unsolved</option>
+                <option value="resolved">Solved</option>
+            </select>
+
+            <label for="deptFilter">Department</label>
+            <select id="deptFilter">
+                <option value="all">All</option>
+                <option value="Water Supply">Water Supply</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Road Damage">Road Damage</option>
+                <option value="Garbage">Garbage</option>
+            </select>
+
+            <h2>Problem List</h2>
+            <div id="issues"></div>
+        </div>
+
+
+        <div class="card">
+            <h2>City Map</h2>
+            <div id="map"></div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="staff.js"></script>
+</body>
+
+</html>

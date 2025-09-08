@@ -1,0 +1,61 @@
+h1 {
+
+    background-color: aqua;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: rgb(203, 229, 132);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+#map {
+    height: 500px;
+    border-radius: 10px;
+
+}
+
+.issue {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.status-btn {
+    background: #2c7be5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.status-btn:hover {
+    background: #1a5dbb;
+}
