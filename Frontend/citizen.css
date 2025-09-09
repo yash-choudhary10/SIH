@@ -1,10 +1,8 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     background: #f4f4f4;
-    padding: 20px;
 }
-
-
 
 /* Main box */
 .mainbox {
@@ -14,10 +12,7 @@ body {
     width: 500px;
     margin: auto;
     box-sizing: border-box;
-    /* includes padding in width/height */
 }
-
-
 
 /* Main heading */
 .custom-heading {
@@ -26,8 +21,6 @@ body {
     font-weight: 700;
     text-align: center;
 }
-
-
 
 /* Camera button */
 .camera-btn {
@@ -39,20 +32,16 @@ body {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    /* stack icon and text vertically */
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s;
-    border-radius: 10px;
-    /* optional: rounded box */
+    border-radius: 8px;
 }
 
 .camera-btn:hover {
     background: rgb(200, 236, 250);
-    /* darker blue for hover */
     transform: scale(1.05);
-    /* slight zoom on hover */
 }
 
 .camera-text {
@@ -63,38 +52,55 @@ body {
     font-weight: 700;
 }
 
-
-
+/* Common input fields */
 input,
 select,
-textarea,
-button {
+textarea {
     width: 100%;
-    margin: 8px 0;
+    margin: 5px 0;
     padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
 }
 
+select {
+    background-color: #fff;
+    cursor: pointer;
+}
 
+textarea {
+    resize: vertical;
+}
+
+/* General button */
+button {
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #eaeaea;
+}
 
 /* Issue category */
+.issue-cat {
+    margin: 20px 0;
+}
+
 .issue-cat label {
     font-weight: bold;
 }
 
-.issue-cat {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    /* spacing below each field */
-}
-
-
-
 /* Description */
 .description-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
     margin: 20px 0;
 }
 
@@ -103,46 +109,33 @@ button {
 }
 
 .description-container .textarea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    position: relative;
     width: 100%;
-    max-width: 400px;
 }
 
 .description-container textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
-    outline: none;
+    height: 120px;
+    padding-right: 50px;
 }
 
 .description-container button {
-        padding: 10px 15px;
-            cursor: pointer;
-            color: black;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background-color: white;
-        }
-
-
-
-
-
-/* Recording button */
-.voice-recorder {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 15px;
+    background: #fff;
+    color: black;
+}
+
+/* Voice recorder */
+.voice-recorder {
     margin: 20px 0;
 }
 
@@ -150,102 +143,85 @@ button {
     font-weight: bold;
 }
 
+.voice-recorder .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .voice-recorder button {
     color: red;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    border: 1px solid #ccc;
     background-color: black;
-}
-
-.voice-recorder p {
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 0;
 }
 
 .voice-recorder audio {
-    width: 100%;
+    flex: 1;
+    max-width: 500px;
 }
 
+/* Location */
+.location {
+    width: 100%;
+    margin: 15px 0;
+}
 
+.manual-location textarea {
+    height: 60px;
+    border-radius: 12px;
+    resize: none;
+}
 
-/* Name */
-.name {
+.auto-location button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
     display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.name label {
-    font-weight: bold;
-}
-
-.name input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    box-sizing: border-box;
-}
-
-
-
-/* Phone number */
+/* Name & Phone */
+.name,
 .phone {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin: 22px 0;
 }
 
+.name label,
 .phone label {
     font-weight: bold;
 }
 
-.phone input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    box-sizing: border-box;
-}
-
-
-
 /* Submit button */
 button[type="submit"] {
     background: #2c7be5;
-    /* primary blue */
     color: white;
-    border: none;
     padding: 12px 20px;
-    /* more balanced padding */
     margin-top: 15px;
     border-radius: 8px;
-    cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     width: 100%;
-    /* makes it full width */
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover effect */
 button[type="submit"]:hover {
     background: #1a68d1;
-    /* darker blue on hover */
     transform: scale(1.03);
 }
 
-/* Active (pressed) effect */
 button[type="submit"]:active {
     background: #155ab3;
-    /* even darker blue */
     transform: scale(0.98);
 }

@@ -38,74 +38,97 @@
             </label>
 
 
-                
-        
+
+
             <!-- Issue category -->
-        <div class="issue-cat">
-            <label for="category">Issue Category</label>
-            <select id="category" required>
-                <option value="" disabled selected hidden>Select issue type</option>
-                <option>Water Supply</option>
-                <option>Electricity</option>
-                <option>Road Damage</option>
-                <option>Garbage</option>
-            </select>
-        </div>
+            <div class="issue-cat">
+                <label for="category">Issue Category</label>
+                <select id="category" required>
+                    <option value="" disabled selected hidden>Select issue type</option>
+                    <option>Water Supply</option>
+                    <option>Electricity</option>
+                    <option>Road Damage</option>
+                    <option>Garbage</option>
+                </select>
+            </div>
 
 
 
-                <!-- Description -->
+
+
+
+            <!-- Description -->
             <div class="description-container">
+                <label for="description">Description</label>
                 <div class="textarea">
                     <textarea id="description" placeholder="Describe the issue in detail" required></textarea>
                     <button type="button" id="micBtn"><i class="fa-solid fa-microphone"></i></button>
-                    <label for="description">Description</label>
                 </div>
             </div>
 
 
 
 
-                
-                <!-- Voice recorder -->
-                <div class="voice-recorder">
-                    <label>Voice Recording (Optional)</label>
-                    <button type="button" id="recordBtn"><i class="fa-solid fa-microphone"></i></button>
-                    <p id="recordStatus"></p>
+
+
+            <!-- Voice recorder -->
+            <div class="voice-recorder">
+                <label for="recordBtn">Voice Recording (Optional)</label>
+
+                <!-- Controls row -->
+                <div class="controls">
+                    <button type="button" id="recordBtn">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
                     <audio id="audioPlayback" controls></audio>
-                    <input type="hidden" id="audioData" name="audioData">
-                    <p id="status"></p>
                 </div>
 
-
-
-                <!-- Location -->
-                <label>Location</label>
-                <div class="textarea">
-                    <textarea id="location" placeholder="Enter you location"></textarea>
-                    <button onclick="getCurrentLocation()"><i class="fa-solid fa-location-dot"></i></button>
-                </div>
-
-
-
-                <!-- Name -->
-                <div class="name">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Enter full name" required>
-                </div>
+                <!-- Status messages -->
+                <p id="recordStatus"></p>
+                <input type="hidden" id="audioData" name="audioData">
+                <p id="status"></p>
+            </div>
 
 
 
 
-                <!-- Phone Number -->
-                <div class="phone">
-                    <label for="phone">Phone Number</label>
-                    <input type="number" id="phone" placeholder="Enter your contact number" required>
-                </div>
+            <!-- Location -->
+            <label for="location">Location</label>
+
+            <!-- Manual input box -->
+            <div class="location manual-location">
+                <textarea id="location" placeholder="Enter your location"></textarea>
+            </div>
+
+            <!-- Use my location button box -->
+            <div class="location auto-location">
+                <button type="button" onclick="getCurrentLocation()">
+                    <i class="fa-solid fa-location-dot"></i> Use My Location
+                </button>
+            </div>
 
 
 
-                <button type="submit">SUBMIT</button>
+
+
+            <!-- Name -->
+            <div class="name">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter full name" required>
+            </div>
+
+
+
+
+            <!-- Phone Number -->
+            <div class="phone">
+                <label for="phone">Phone Number</label>
+                <input type="number" id="phone" placeholder="Enter your contact number" required>
+            </div>
+
+
+
+            <button type="submit">SUBMIT</button>
 
 
         </form>

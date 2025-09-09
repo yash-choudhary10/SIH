@@ -141,30 +141,35 @@ document.getElementById("complaintForm").addEventListener("submit", async (e) =>
 
 
 
+
 function getCurrentLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            function (position) {
-                const latitude = position.coords.latitude.toFixed(6);
-                const longitude = position.coords.longitude.toFixed(6);
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const { latitude, longitude } = position.coords;
 
-                // Show location in the page
-                document.getElementById("location").innerText =
-                    "Your Location: " + latitude + ", " + longitude;
+            try {
+                // Fetch address using reverse geocoding
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+                );
+                const data = await response.json();
 
-                // You can also store it in a hidden input if it's part of a form
-                // document.getElementById("locationInput").value = latitude + "," + longitude;
-            },
-            function (error) {
-                document.getElementById("location").innerText =
-                    "Error: Unable to get location. Please allow location access.";
+                // Prefer display_name (full address)
+                const address = data.display_name || `${latitude}, ${longitude}`;
+
+                // Put address in textarea
+                document.getElementById("location").value = address;
+            } catch (error) {
+                console.error("Error fetching location:", error);
+                document.getElementById("location").value = `${latitude}, ${longitude}`;
             }
-        );
+        });
     } else {
-        document.getElementById("location").innerText =
-            "Geolocation is not supported by your browser.";
+        alert("Geolocation is not supported by this browser.");
     }
 }
+
+
 
 
 const fileInput = document.getElementById("fileInput");
